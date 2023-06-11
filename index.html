@@ -1,0 +1,50 @@
+<html>
+<head>
+	<style>
+		* { font-size:40px; font-family:Curlz MT; }
+	</style>
+<script>
+	function check() 
+	{
+		event.preventDefault();
+		var num = document.getElementById("num");
+		var res = document.getElementById("res");
+		if (num.value == "") {
+			alert("input is empty ");
+			num.focus();
+			res.innerHTML = "";
+			return;
+		}
+
+		let n = Number(num.value);
+		if (! Number.isInteger(n)) {
+			alert("integers only ");
+			num.value = "";
+			num.focus();
+			res.innerHTML = "";
+			return;
+		}
+		
+		let msg = "";
+		if (n % 2 == 0)
+			msg = "Even";
+		else
+			msg = "Odd";
+		alert(msg);	
+		localStorage.setItem("msg", msg);
+		window.location.href="result.html";
+		} 
+</script>
+</head>
+<body>
+<center>
+<h1> Even Odd App by KS </h1>
+<form onsubmit=check()>
+<input type="number" id="num" placeholder="enter integer ">
+<br><br>
+<input type="submit" value="find" onclick="check()">
+</form>
+</center>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<html>
+<head>
+	<style>
+		* { font-size:40px; font-family:Curlz MT; }
+	</style>
+</script>
+</head>
+<body >
+<center>
+<h1> Result by KS </h1>
+<h1 id="res"> </h1> 
+<a href="index.html"> Home </a>
+<script>
+	let msg = localStorage.getItem("msg");
+	let res = document.getElementById("res");
+	console.log(msg);
+	if (msg!==null) {
+		res.innerHTML = msg;
+	} else {
+		res.innerHTML = "u did not enter number";
+	}
+</script>
+</center>
+</body>
+</html>
+
